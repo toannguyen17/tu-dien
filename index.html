@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[Bài tập] từ điển</title>
+</head>
+<body>
+	<div class="trans"></div>
+	<input type="text" name="text" /><br /><br />
+	<button>Translate</button>
+	<script type="text/javascript">
+		let elTrans = document.querySelector('.trans');
+		let input   = document.querySelector('input');
+		let btn     = document.querySelector('button');
+		let en = [
+			'hello','memory','setting','button',
+			'china',
+		]
+		let vi = [
+			'xin chào','bộ nhớ','cài đặt','nút bấm',
+			'COVID 19'
+		]
+		btn.addEventListener('click', function() {
+			let check = en.indexOf(input.value);
+			if (check === -1) {
+				elTrans.innerText = 'Không tìm thấy.'
+			}else{
+				elTrans.innerText = vi[check];
+			}
+		});
+	</script>
+</body>
+</html>
